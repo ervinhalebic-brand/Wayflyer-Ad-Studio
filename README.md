@@ -2,7 +2,7 @@
 
 A single-page tool for making social ad images for Instagram, Facebook and LinkedIn. It walks you through a few setup steps, opens a canvas editor, and exports a finished PNG or JPG at the right size for the placement.
 
-Everything lives in one file, [index.html](index.html): HTML, CSS and JavaScript, with no build step and no dependencies apart from Google Fonts.
+The app is one file, [index.html](index.html): HTML, CSS and JavaScript, with no build step and no dependencies apart from Google Fonts. Starter library images live in [assets/library/](assets/library/).
 
 ## Running it
 
@@ -68,7 +68,7 @@ What these can do depends on where the page runs:
 |--------------|---------------------------------------------------------------------------|---------------------------------------------------------------------------------------------|
 | **cloud**    | Published as a Claude artifact with the `db` and `assets` capabilities    | The library and Live Ads sync for everyone with access, and uploaded files are stored as assets |
 | **readonly** | `db` is available but `assets` is not                                     | You can browse the shared library, but you can't upload to it                               |
-| **local**    | Opened as a plain file, or with no runtime                                | Uses the images bundled in the file, and Live Ads last only until you close the tab         |
+| **local**    | Opened as a plain file, or with no runtime                                | Uses the starter images in `assets/library/`, and Live Ads last only until you close the tab       |
 
 The app reaches these capabilities through `window.claude.use(...)`: `db`, `assets` and `downloads`. When they aren't available, it falls back to local mode without errors.
 
